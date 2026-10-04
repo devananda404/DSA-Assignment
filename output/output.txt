@@ -1,0 +1,40 @@
+===== DSA Assignment 2 - Question 5 =====
+
+Part (a): Organisational Hierarchy Tree
+Tree construction: CEO is root; HR, Finance, IT added as children of CEO;
+Development, Testing added as children of IT;
+Frontend, Backend added as children of Development.
+
+Level-order traversal: CEO HR Finance IT Development Testing Frontend Backend
+Tree height: 4 levels
+
+Part (b): Searching
+Original order (used for Linear Search): CEO HR Finance IT Development Testing Frontend Backend
+Sorted order (used for Binary Search): Backend CEO Development Finance Frontend HR IT Testing
+
+Searching for "IT"
+  Linear Search : FOUND, comparisons = 4
+  Binary Search steps:
+    comparing with Finance      -> target is larger, search right half
+    comparing with HR           -> target is larger, search right half
+    comparing with IT           -> match
+  Binary Search : FOUND, comparisons = 3
+
+Searching for "Frontend"
+  Linear Search : FOUND, comparisons = 7
+  Binary Search steps:
+    comparing with Finance      -> target is larger, search right half
+    comparing with HR           -> target is smaller, search left half
+    comparing with Frontend     -> match
+  Binary Search : FOUND, comparisons = 3
+
+Searching for "Marketing"
+  Linear Search : NOT FOUND, comparisons = 8
+  Binary Search steps:
+    comparing with Finance      -> target is larger, search right half
+    comparing with HR           -> target is larger, search right half
+    comparing with IT           -> target is larger, search right half
+    comparing with Testing      -> target is smaller, search left half
+  Binary Search : NOT FOUND, comparisons = 4
+
+Total comparisons -> Linear Search: 19, Binary Search: 10
